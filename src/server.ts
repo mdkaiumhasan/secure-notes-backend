@@ -4,7 +4,7 @@ import { config } from './config';
 
 async function main() {
   await mongoose.connect(config.MONGODB_URI);
-  const server = app.listen(config.PORT, () => console.log(`API listening on :${config.PORT}`));
+  const server = app.listen(config.PORT, '0.0.0.0', () => console.log(`API listening on :${config.PORT}`));
 
   const shutdown = async () => {
     server.close();
